@@ -7,7 +7,7 @@ public class TodosTest {
     SimpleTask simpleTask2 = new SimpleTask(8, "Позвонить другу на счет хлеба");
 
     String[] subtasks = {"", "Яйца", "Хлеб"};
-    String[] subtasks2 = {"Яблоко (Позвонить маме, узнать вес)", "Яйца", "Хлеб"};
+    String[] subtasks2 = {"Яблоко (Позвонить маме, узнать вес)", "Яйца 1", "Хлеб"};
 
     Epic epic = new Epic(55, subtasks);
     Epic epic2 = new Epic(85, subtasks2);
@@ -107,6 +107,16 @@ public class TodosTest {
         Task[] expected = {simpleTask, simpleTask2, epic2, meeting, meeting2};
         Assertions.assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void shouldFindNumbers() {
+
+        Todos todos = fillSimple();
+        Task[] actual = todos.search("1");
+        Task[] expected = {epic2};
+        Assertions.assertArrayEquals(expected, actual);
+    }
 }
+
 
 
