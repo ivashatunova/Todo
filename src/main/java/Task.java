@@ -1,6 +1,6 @@
 import java.util.Objects;
-public class Task {
 
+public class Task {
 
     protected int id;
 
@@ -31,7 +31,5 @@ public class Task {
     public int hashCode() {
         return Objects.hash(id);
     }
-
-
-
 }
+
